@@ -1,18 +1,18 @@
-Movies Database
+#Movies Database
 
-Front End:
-    Angular 6
+    Front End:
+        Angular 6
 
-Back End: 
-    NodeJS
-    MongoDB
+    Back End: 
+        NodeJS
+        MongoDB
 
-READ the docs for more info.
+    Read the docs for more info.
 
 Setting up development environment:
 
-    Install docker.
-    Check to make sure docker is working
+    1.Install docker.
+    2.Check to make sure docker is working
         docker --version
         docker-compose --version
 
@@ -27,5 +27,4 @@ Running the application:
         docker-compose build
         docker-compose up
 
-Once the application starts running, in browser open
-    http://localhost:4200
+Once the application starts running, in the browser open http://localhost:4200
