@@ -1,0 +1,9 @@
+<ng-multiselect-dropdown
+  [placeholder]="'Select Producer'"
+  [data]="producers"
+  [(ngModel)]="selectedProducer"
+  [settings]="dropdownSettings"
+  (onSelect)="onItemSelect($event)"
+  (onDeSelect) = "onItemDeSelect($event)"
+>
+</ng-multiselect-dropdown>

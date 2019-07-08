@@ -1,0 +1,85 @@
+Movies Database
+
+1. Initial screen will list all the movies name in the application
+2. User can search for particular movie from the search box
+3. User can add a movie with the Add Movie feature
+    3.a. User can add new actors and producers in the same screen if the existing list does not contain
+4. On clicking the movie name from the list, all the details about the movie will be displayed
+5. The details of the movie can be edited
+    5.a. Actor details can be viewed on clicking the actor name and the details of the actor can be edited on this screen. The same applies for producer details.
+6. User can delete the movie with the Delete feature.
+
+Front End:
+    Angular 6
+
+Back End: 
+    NodeJS
+    MongoDB
+
+    Proper validations added.
+    Validations are done at both level 
+        1. Model level (Mongoose)
+        2. Request level (Joi validator)
+    
+    Validations List:
+        Movies: 
+            name: {
+		`       type: String,
+		        required: true
+            },
+            year_of_release: {
+                type: Number,
+                required: true
+            },
+            plot: {
+                type: String
+            },
+            poster: {
+                type: String,
+                required: true
+            },
+            actors: [{
+                ref : "actors",
+                type : ObjectId,
+                required: true
+            }],
+            producer: {
+                ref : "producers",
+                type : ObjectId,
+                required: true
+            }
+        Actors: 
+            name: {
+                type: String,
+                required: true
+            },
+            sex: {
+                type: String, 
+                required: true,
+                enum: ['male', 'female', 'third']
+            },
+            dob: {
+                type: String
+            },
+            bio: {
+                type: String
+            }
+        Producers: 
+            name: {
+                type: String,
+                required: true
+            },
+            sex: {
+                type: String, 
+                required: true,
+                enum: ['male', 'female', 'third']
+            },
+            dob: {
+                type: String
+            },
+            bio: {
+                type: String
+            }    
+
+Devops:
+    Dockerised

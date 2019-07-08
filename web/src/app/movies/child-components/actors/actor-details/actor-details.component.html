@@ -1,0 +1,7 @@
+<div *ngIf="actorDetails">
+    <p>Name: {{actorDetails.name}}</p>
+    <p>Sex: {{actorDetails.sex}}</p>
+    <p>DOB: {{actorDetails.dob}}</p>
+    <p>Bio: {{actorDetails.bio}}</p>
+    <button><a [routerLink]="['/actors/update', actorDetails._id]">EDIT</a></button>
+</div>

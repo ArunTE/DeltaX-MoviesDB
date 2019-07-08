@@ -1,0 +1,13 @@
+<div>
+    <img [src]="movieDetails.poster" alt="poster" height="200" width="200">
+    <p>Name: {{movieDetails.name}}</p>
+    <p>Year of release: {{movieDetails.year_of_release}}</p>
+    <p>Actors: </p>
+    <div *ngFor="let actor of movieDetails.actors">
+        <p><a [routerLink]="['/actors', actor._id]">{{actor.name}}</a></p>
+    </div>
+    <p>Producer: <a [routerLink]="['/producers', movieDetails.producer._id]">{{movieDetails.producer.name}}</a></p>
+    <p>Plot: {{movieDetails.plot}}</p>
+</div> 
+<button><a [routerLink]="['/movies/update', movieDetails._id]">EDIT</a></button>
+<button (click)="delete($event)">DELETE</button>

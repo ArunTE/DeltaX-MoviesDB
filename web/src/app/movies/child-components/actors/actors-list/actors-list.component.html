@@ -1,0 +1,9 @@
+<ng-multiselect-dropdown
+  [placeholder]="'Select Actors'"
+  [data]="actors"
+  [(ngModel)]="selectedActors"
+  [settings]="dropdownSettings"
+  (onSelect)="onItemSelect($event)"
+  (onDeSelect) = "onItemDeSelect($event)"
+>
+</ng-multiselect-dropdown>

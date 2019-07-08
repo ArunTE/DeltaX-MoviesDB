@@ -1,0 +1,35 @@
+<form *ngIf="ActorsForm" novalidate [formGroup]="ActorsForm">
+    <div>
+        <label>Name: </label>
+        <input formControlName="name" required />
+    </div>
+    <div>
+        <label>
+            <input type="radio" value="male" formControlName="sex">
+              <span>male</span>
+        </label>
+        <label>
+            <input type="radio" value="female" formControlName="sex">
+              <span>female</span>
+        </label>
+        <label>
+            <input type="radio" value="third" formControlName="sex">
+              <span>third</span>
+        </label>
+    </div>
+    <div>
+        <label>DOB: </label>
+        <input formControlName="dob" required />
+    </div>
+    <div>
+        <label>Bio: </label>
+        <textarea formControlName="bio" rows="5" cols="70"></textarea>
+    </div>
+    <div *ngIf="createAction">
+        <button (click)="create($event)">CREATE</button>
+    </div>
+    <div *ngIf="updateAction">
+        <button (click)="update($event)">UPDATE</button>
+    </div>
+</form>
+

@@ -1,0 +1,35 @@
+<form novalidate [formGroup]="MoviesForm">
+    <div>
+        <label>Name: </label>
+        <input formControlName="name" required />
+    </div>
+    <div>
+        <label>Year of Release: </label>
+        <input formControlName="year_of_release" required />
+    </div>
+    <div>
+        <label>Plot: </label>
+        <textarea formControlName="plot" rows="5" cols="70"></textarea>
+    </div>
+    <div>
+        <label>Poster: </label>
+        <input formControlName="poster" placeholder="image link" required />
+    </div>
+    <div>
+        <label>Actors: </label>
+        <button><a routerLink="/actors/create">ADD NEW</a></button>
+        <app-actors-list [existingActors]="actors" (onSelectActors)='selectedActors($event)'></app-actors-list>
+    </div>
+    <div>
+        <label>Producer: </label>
+        <button><a routerLink="/producers/create">ADD NEW</a></button>
+        <app-producers-list [existingProducer]="producer" (onSelectProducer)='selectedProducer($event)'></app-producers-list>
+    </div>
+    <div *ngIf="createAction">
+        <button (click)="create($event)">CREATE</button>
+    </div>
+    <div *ngIf="updateAction">
+        <button (click)="update($event)">UPDATE</button>
+    </div>
+</form>
+

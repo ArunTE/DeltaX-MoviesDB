@@ -1,0 +1,45 @@
+version: '3.5'
+
+services:
+
+  service:
+    build:
+      context: ./services
+      dockerfile: /home/cc/Documents/DeltaX/services/DockerFile
+    ports:
+      - 3000:3000
+    depends_on: 
+      - mongo 
+    networks:
+      DeltaX_network:
+        aliases:
+          - service.local
+
+  web:
+    build:
+      context: ./web
+      dockerfile: /home/cc/Documents/DeltaX/web/DockerFile
+    ports:
+      - 4200:4200
+    networks:
+      - DeltaX_network
+
+  mongo:
+    image: mongo
+    ports:
+      - 27018:27017
+    volumes:
+      - mongo_vol:/data/db
+    networks:
+      DeltaX_network:
+        aliases:
+          - mongo.local
+
+
+volumes:
+  mongo_vol:
+
+networks:
+  DeltaX_network:
+    driver: bridge
+

@@ -1,0 +1,8 @@
+<button><a routerLink="/movies/create">ADD MOVIE</a></button>
+<div>MOVIES LIST:</div>
+<div>
+  <input type="text" [(ngModel)]="searchText" placeholder="search" />
+</div>
+<div *ngFor="let movie of movies | filter : searchText"> 
+  <a [routerLink]="['/movies', movie._id]">{{movie.name}}</a>
+</div>
