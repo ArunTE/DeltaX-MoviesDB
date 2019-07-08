@@ -1,13 +1,13 @@
 Movies Database
 
 1. Initial screen will list all the movies name in the application
-2. User can search for particular movie from the search box
-3. User can add a movie with the Add Movie feature
-    3.a. User can add new actors and producers in the same screen if the existing list does not contain
-4. On clicking the movie name from the list, all the details about the movie will be displayed
+2. User can search for a particular movie from the search box
+3. User can add a movie by clicking on the 'Add Movie' button
+    3.a. User can add new actors and producers on the same screen, by clicking on                 the 'Add New' button
+4. On clicking the movie name from the list, all the details about the movie will be            displayed
 5. The details of the movie can be edited
-    5.a. Actor details can be viewed on clicking the actor name and the details of the actor can be edited on this screen. The same applies for producer details.
-6. User can delete the movie with the Delete feature.
+    5.a. Actor details can be viewed on clicking the actor name and the details of the actor can be edited on this screen. The same applies to producer details.
+6. User can delete the movie with the 'Delete' button.
 
 Front End:
     Angular 6
@@ -16,16 +16,17 @@ Back End:
     NodeJS
     MongoDB
 
-    Proper validations added.
+Validations:
     Validations are done at both level 
         1. Model level (Mongoose)
         2. Request level (Joi validator)
     
     Validations List:
-        Movies: 
+
+        MOVIES 
             name: {
-		`       type: String,
-		        required: true
+                type: String,
+                required: true
             },
             year_of_release: {
                 type: Number,
@@ -48,7 +49,8 @@ Back End:
                 type : ObjectId,
                 required: true
             }
-        Actors: 
+
+        ACTORS: 
             name: {
                 type: String,
                 required: true
@@ -64,7 +66,8 @@ Back End:
             bio: {
                 type: String
             }
-        Producers: 
+
+        PRODUCERS: 
             name: {
                 type: String,
                 required: true
@@ -82,4 +85,4 @@ Back End:
             }    
 
 Devops:
-    Dockerised
+    Dockerized
